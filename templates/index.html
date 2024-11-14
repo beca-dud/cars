@@ -12,6 +12,39 @@
         <header class="container bg-white rounded">
             <h1 class="text-center">Carros</h1>
         </header>
+        <header class="container bg-white rounded">
+        <nav class="container bg-white rounded">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a href="{% url 'home' %}" class="nav-link">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'admin:login' %}" class="nav-link">Logar</a>
+                </li>
+            </ul>
+        </nav>
+        <main class="container bg-white rounded">
+            <table class="table table-striped table-bordered table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Modelo</th>
+                        <th>Marca</th>
+                        <th>Ano</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for car in cars %}
+                    <tr>
+                        <td>{{ car.id }}</td>
+                        <td>{{ car.model }}</td>
+                        <td>{{ car.brand }}</td>
+                        <td>{{ car.year }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </main>
     </div>
 </body>
 </html>
